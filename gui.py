@@ -8,9 +8,12 @@ list_box = sg.Listbox(values = functions.get_todos(),
                       key = 'todos', enable_events = True, size = [45, 10])
 edit_button = sg.Button("Edit")
 
+
+
 window = sg.Window("My To-Do App",
-                   layout=[[label],[input_box, add_button],[list_box, edit_button]],
-                   font =("Helvetica", 20))
+                   layout = [[label],[input_box, add_button],[list_box, edit_button]],
+                   font = ("Helvetica", 20))
+
 while True:
     event, values = window.read() #Mostra la finestra
     print(event)
@@ -32,6 +35,7 @@ while True:
             window['todos'].Update(values=todos)
         case "todos":
             window['todo'].Update(value = values['todos'][0])
-        case sg.WIN_CLOSED:
-            break
+        case sg.WIN_CLOSED: #permette di uscire dal while quando viene premuto il pulsante di chiusura app
+            break #esce dal while
+            #exit() esce dal programma
 window.close()
