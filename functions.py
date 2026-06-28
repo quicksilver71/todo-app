@@ -3,7 +3,7 @@
 # standard library — open up `time.py` in your Python install and
 # scroll to the top.) Capitalizing the name signals "this is a fixed
 # value, don't reassign it at runtime".
-FILEPATH = "Files/todos.txt"
+FILEPATH = "todos.txt"
 
 
 def get_todos(file_path=FILEPATH):
